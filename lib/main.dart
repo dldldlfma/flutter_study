@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 
 void main() => runApp(new MyApp());
 
-
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  MyApp ({this.TextInput});
+  final Widget TextInput;
+  MyAppState createState() => new MyAppState();
+}
+class MyAppState extends State<MyApp>{
   @override
   Widget build(BuildContext ctxt) {
     return new MaterialApp(
@@ -15,31 +20,14 @@ class MyApp extends StatelessWidget {
           body: new Center(
             child: new Column(
               children: <Widget>[
-                new Column(
-                children: <Widget>[
-                  new Text("Hello Flutter "),
-                  new Text("Hello Flutter2 "),
-                ]
-            ),
-                new Text("Hello Flutter -"),
-
-                new Column(
-                  children: <Widget>[
-                    new AppBar(
-                      title: new Text("Hello"),
-                    ),
-                    new AppBar(
-                      title: new Text("Hello2"),
-                    ),
-                  ]
-                ),
+                new Image.network('https://cdn.arstechnica.net/wp-content/uploads/2018/12/7-800x272.jpg'),
                 new Icon(Icons.android),
                 new Icon(
                   Icons.favorite,
                   size: 100.0,
                   color: Colors.red,
                 ),
-                new Image.network('https://cdn.arstechnica.net/wp-content/uploads/2018/12/7-800x272.jpg')
+                new Text("\n\n Hello Flutter\n\n"),
 
               ],
             ),
