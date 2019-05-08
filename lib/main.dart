@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_tutorial/tab/first.dart';
 import 'package:flutter_widget_tutorial/tab/second.dart';
+import 'package:flutter_widget_tutorial/tab/third.dart';
 import 'package:video_player/video_player.dart';
 
 void main() => runApp(new MyApp());
@@ -34,7 +35,7 @@ class MyAppState extends State<MyApp> {
               //Icon(Icons.directions_car), // Tab View에 들어가는 내용
               First(),
               Second(),
-              Icon(Icons.directions_bike),
+              Third(),
               Text("Hello"),
             ],
           ),
