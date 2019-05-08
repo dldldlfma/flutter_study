@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_tutorial/tab/first.dart';
 import 'package:video_player/video_player.dart';
 
 void main() => runApp(new MyApp());
@@ -8,31 +9,37 @@ class MyApp extends StatefulWidget {
   final Widget TextInput;
   MyAppState createState() => new MyAppState();
 }
-class MyAppState extends State<MyApp>{
+
+class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext ctxt) {
     return new MaterialApp(
-        title: "MySampleApplication",
-        home: new Scaffold(
-          appBar: new AppBar(
-            title: new Text("Hello Flutter App"),
-          ),
-          body: new Center(
-            child: new Column(
-              children: <Widget>[
-                new Image.network('https://cdn.arstechnica.net/wp-content/uploads/2018/12/7-800x272.jpg'),
-                new Icon(Icons.android),
-                new Icon(
-                  Icons.favorite,
-                  size: 100.0,
-                  color: Colors.red,
-                ),
-                new Text("\n\n Hello Flutter\n\n"),
-
+      home: DefaultTabController(
+        length: 4,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.directions_bike)), //Tab bar에 들어가는 아이콘
+                Tab(icon: Icon(Icons.directions_boat)),
+                Tab(icon: Icon(Icons.directions_transit)),
+                Tab(icon: Icon(Icons.directions_car)),
               ],
             ),
+            title: Text('Tabs Demo'),
           ),
-        )
+          body: TabBarView(
+            children: [
+              //Icon(Icons.directions_car), // Tab View에 들어가는 내용
+              First(),
+              Icon(Icons.directions_transit),
+              Icon(Icons.directions_bike),
+              Text("Hello"),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
+
